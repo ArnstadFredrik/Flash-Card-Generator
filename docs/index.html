@@ -15,9 +15,21 @@
   </head>
 </html>
 <body>
-  <div class="noprint">
-    <textarea name="gloser" id="gloserInput" class="gloserInput" cols="30" rows="10"></textarea>
+  <div class="noprint menu">
+    <textarea name="gloser" id="gloserInput" class="gloserInput" cols="30" rows="10">אַבְרָהָם	Abraham</textarea>
     <button class="btn generate">Generer</button>
+
+    <h3>Sort Options</h3>
+    <div class="radio sort checked" id="tab" data-value="tab"></div>
+    <div class="radio sort" id="comma" data-value="comma"></div>
+
+    <h3>Font Options</h3>
+    <div class="radio font checked" id="hebrew" data-value="hebrew"></div>
+    <div class="radio font" id="greek" data-value="greek"></div>
+    <div class="radio font" id="norwegian" data-value="norwegian"></div>
+
+    <h3>Border Options</h3>
+    <div class="radio border" id="border" data-value="border"></div>
   </div>
 
   <div class="cardWrapper"></div>

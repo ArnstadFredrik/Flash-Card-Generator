@@ -12,8 +12,7 @@ p
   font-size: 2em
 
 .hebrew
-  font-family: 'SBL Hebrew'
-  font-size: 2.5rem
+  text-transform: capitalize
 
 .norwegian
   font-size: 1.2rem
@@ -40,12 +39,75 @@ p
   grid-gap: 20px
 
 .card
-  border: 1px solid transparent
+  //border: 1px solid transparent
   padding: 50px
   height: 150px !important
   box-sizing: border-box
   overflow: hidden
   text-align: center
+
+.menu
+  background: $containerColor
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: 30vh 10vh
+  padding: 20px
+  width: 320px
+  box-sizing: border-box
+  grid-gap: 20px
+
+.gloserInput
+  background: $mainOneLight
+  border: none
+  font-size: 0.7rem
+  padding: 20px
+
+.btn
+  background: $mainOne
+  color: $containerColor
+  border: none
+  font-size: 1rem
+  text-transform: uppercase
+
+.radio
+  width: 30px
+  height: 30px
+  background: $mainOne
+  border-radius: 50%
+  position: relative
+
+.checked
+  background: $mainOneDark
+
+#tab:after
+  content: "Tab"
+#comma:after
+  content: "Comma"
+#hebrew:before
+  content: "hebrew"
+#greek:before
+  content: "greek"
+#norwegian:before
+  content: "norwegian"
+#border:before
+  content: "border"
+
+#tab:after,
+#comma:after,
+#hebrew:before,
+#greek:before,
+#norwegian:before,
+#border:before
+  position: relative
+  left: 40px
+  top: 5px
+  text-transform: capitalize
+
+
+
+@media screen
+  .cardWrapper
+    display: none
 
 @media print
   .noprint
