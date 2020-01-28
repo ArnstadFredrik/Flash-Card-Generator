@@ -1,0 +1,57 @@
+//main: ../main.sass
+
+body
+  font-family: $font
+  font-size: $fontSize
+  color: $fontColor
+  display: grid
+  justify-items: center
+  align-items: center
+
+p
+  font-size: 2em
+
+.hebrew
+  font-family: 'SBL Hebrew'
+  font-size: 2.5rem
+
+.norwegian
+  font-size: 1.2rem
+  text-transform: capitalize
+
+
+
+.cardWrapper
+  //width: 210mm
+  //height: 216mm
+  display: block
+  align-content: center
+  justify-content: center
+
+.hebWrap,
+.norWrap
+  display: block
+
+.page
+  width: 100%
+  height: 100%
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  grid-gap: 20px
+
+.card
+  border: 1px solid transparent
+  padding: 50px
+  height: 150px !important
+  box-sizing: border-box
+  overflow: hidden
+  text-align: center
+
+@media print
+  .noprint
+    display: none
+  .hebWrap,
+  .norWrap
+    display: block
+    break-after: page
+    margin: 0px auto
