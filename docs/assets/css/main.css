@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'SBL Hebrew';
+  src: url("/assets/font/SBL_Hbrw.tff");
+}
+
+@font-face {
+  font-family: 'SBL Greek';
+  src: url("/assets/font/SBL_grk.tff");
+}
+
 body {
   font-family: "Roboto", "sans-serif";
   font-size: "14px";
