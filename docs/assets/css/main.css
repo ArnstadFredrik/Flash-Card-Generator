@@ -1,13 +1,4 @@
-@font-face {
-  font-family: 'SBL Hebrew';
-  src: url("/assets/font/SBL_Hbrw.tff");
-}
-
-@font-face {
-  font-family: 'SBL Greek';
-  src: url("/assets/font/SBL_grk.tff");
-}
-
+@charset "UTF-8";
 body {
   font-family: "Roboto", "sans-serif";
   font-size: "14px";
@@ -104,11 +95,13 @@ p {
 }
 
 #hebrew:before {
-  content: "hebrew";
+  content: "עִבְרִי";
+  font-family: "SBLHebrew";
 }
 
 #greek:before {
-  content: "greek";
+  content: "Ἕλλην";
+  font-family: "SBLGreek";
 }
 
 #norwegian:before {

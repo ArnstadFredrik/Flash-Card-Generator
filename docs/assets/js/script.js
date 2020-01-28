@@ -8,10 +8,10 @@ word.font = 'hebrew'
 word.cssFontFamily = function () {
   switch (this.font) {
     case 'hebrew':
-      return 'SBL Hebrew'
+      return 'SBLHebrew'
       break;
     case 'greek':
-      return 'SBL Greek'
+      return 'SBLGreek'
       break;
     case 'norwegian':
       return "sans-serif"

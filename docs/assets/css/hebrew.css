@@ -1,0 +1,13 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "SBLHebrew";
+  src: url("../fonts/SBLHbrw.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/SBLHbrw.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/SBLHbrw.otf") format("opentype"), /* Open Type Font */
+    url("../fonts/SBLHbrw.svg") format("svg"), /* Legacy iOS */
+    url("../fonts/SBLHbrw.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/SBLHbrw.woff") format("woff"), /* Modern Browsers */
+    url("../fonts/SBLHbrw.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}

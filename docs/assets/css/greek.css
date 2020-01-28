@@ -1,0 +1,13 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "SBLGreek";
+  src: url("../fonts/SBLgrk.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/SBLgrk.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/SBLgrk.otf") format("opentype"), /* Open Type Font */
+    url("../fonts/SBLgrk.svg") format("svg"), /* Legacy iOS */
+    url("../fonts/SBLgrk.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/SBLgrk.woff") format("woff"), /* Modern Browsers */
+    url("../fonts/SBLgrk.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
