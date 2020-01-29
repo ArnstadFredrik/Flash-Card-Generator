@@ -176,12 +176,15 @@ word.reset = function () {
   // this.arrayLines = []
   this.wrapper.innerHTML = ""
 }
+
+
+
 const generateBtn = document.querySelector('.generate')
 generateBtn.addEventListener('click',(e) => {
   word.reset()
   word.processInput()
   window.print()
-})
+});
 
 const sortButtons = document.querySelectorAll('.sort')
 for (x of sortButtons) {
