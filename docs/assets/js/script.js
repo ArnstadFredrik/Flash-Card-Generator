@@ -1,79 +1,82 @@
 Array.prototype.move = function(from, to) {
-    this.splice(to, 0, this.splice(from, 1)[0]);
-};
+  this.splice(to, 0, this.splice(from, 1)[0])
+}
 
 const word = {}
 word.setting = 'tab'
 word.font = 'hebrew'
-word.cssFontFamily = function () {
+word.cssFontFamily = function() {
   switch (this.font) {
     case 'hebrew':
       return 'SBLHebrew'
-      break;
+      break
     case 'greek':
       return 'SBLGreek'
-      break;
+      break
     case 'norwegian':
-      return "sans-serif"
-      break;
+      return 'sans-serif'
+      break
   }
 }
-word.cssFontSize = function () {
+word.cssFontSize = function() {
   switch (this.font) {
     case 'hebrew':
       return '2.5rem'
-      break;
+      break
     case 'greek':
       return '2rem'
-      break;
+      break
     case 'norwegian':
-      return "1.5rem"
-      break;
+      return '1.5rem'
+      break
   }
 }
 word.border = false
-word.cssBorder = function () {
+word.cssBorder = function() {
   switch (this.border) {
     case true:
       return '1px solid lightgray'
-      break;
+      break
     case false:
       return '1px solid transparent'
-      break;
+      break
   }
 }
-word.getSettings = function () {
+word.getSettings = function() {
   const radioButtons = document.getElementsByName('selectOpt')
 
-  for (button of radioButtons){
+  for (button of radioButtons) {
     if (button.checked) {
       this.setting = button.value
       return this.setting
     }
   }
-
 }
-word.createLines = function () {
+
+word.createLines = function() {
   this.arrayLines = this.input.split('\n')
 }
-word.createList = function () {
+word.createList = function() {
   this.list = []
   let splitOption
   switch (this.setting) {
     case 'tab':
       splitOption = '\t'
-      break;
+      break
     case 'comma':
       splitOption = ','
-      break;
+      break
+    case 'semicolon':
+      splitOption = ';'
+      break
   }
 
   for (let i = 0; i < this.arrayLines.length; i++) {
     this.list.push(this.arrayLines[i].split(splitOption))
-    console.log(this.list);
+    console.log(this.list)
   }
 }
-word.createLanguageList = function () {
+word.createLanguageList = function() {
   this.hebrew = []
   this.norwegian = []
 
@@ -92,17 +95,17 @@ word.createLanguageList = function () {
   }
 
   let length = this.norwegian.length
-    for (let i = 0; i < length; i++) {
-      if (i % 2 == 0) {
-        this.norwegian.move(i,i+1)
-      }
+  for (let i = 0; i < length; i++) {
+    if (i % 2 == 0) {
+      this.norwegian.move(i, i + 1)
     }
+  }
 
-    console.log(this.hebrew);
-    console.log(this.norwegian);
+  console.log(this.hebrew)
+  console.log(this.norwegian)
 }
-word.createArray = function () {
-  let length = Math.ceil(this.hebrew.length/12)
+word.createArray = function() {
+  let length = Math.ceil(this.hebrew.length / 12)
   let heb = this.hebrew
   let nor = this.norwegian
 
@@ -110,21 +113,19 @@ word.createArray = function () {
     let arrayH
     let arrayN
     if (this.hebrew.length < 12) {
-      arrayH = heb.splice(0,this.hebrew.length)
-      arrayN = nor.splice(0,this.norwegian.length)
-    }
-    else {
-      arrayH = heb.splice(0,12)
-      arrayN = nor.splice(0,12)
+      arrayH = heb.splice(0, this.hebrew.length)
+      arrayN = nor.splice(0, this.norwegian.length)
+    } else {
+      arrayH = heb.splice(0, 12)
+      arrayN = nor.splice(0, 12)
     }
     this.hebrew = arrayH
     this.norwegian = arrayN
-    this.createPage(arrayH,arrayN)
+    this.createPage(arrayH, arrayN)
   }
-
 }
 word.wrapper = document.querySelector('.cardWrapper')
-word.createPage = function (arrayH,arrayN) {
+word.createPage = function(arrayH, arrayN) {
   let hebrew = document.createElement('div')
   hebrew.className = 'page hebrew'
   hebrew.style.fontFamily = this.cssFontFamily()
@@ -160,7 +161,7 @@ word.createPage = function (arrayH,arrayN) {
   this.wrapper.appendChild(norWrap)
 }
 
-word.processInput = function () {
+word.processInput = function() {
   word.input = document.querySelector('.gloserInput').value
   //word.getSettings()
   word.createLines()
@@ -168,27 +169,25 @@ word.processInput = function () {
   word.createLanguageList()
   word.createArray()
 }
-word.reset = function () {
+word.reset = function() {
   // this.input = ""
   // this.norwegian = []
   // this.hebrew = []
   // this.list = []
   // this.arrayLines = []
-  this.wrapper.innerHTML = ""
+  this.wrapper.innerHTML = ''
 }
 
-
-
 const generateBtn = document.querySelector('.generate')
-generateBtn.addEventListener('click',(e) => {
+generateBtn.addEventListener('click', e => {
   word.reset()
   word.processInput()
   window.print()
-});
+})
 
 const sortButtons = document.querySelectorAll('.sort')
 for (x of sortButtons) {
-  x.addEventListener('click',(e) => {
+  x.addEventListener('click', e => {
     sortButtons.forEach(btn => {
       btn.classList.remove('checked')
     })
@@ -199,7 +198,7 @@ for (x of sortButtons) {
 
 const fontButtons = document.querySelectorAll('.font')
 for (x of fontButtons) {
-  x.addEventListener('click',(e) => {
+  x.addEventListener('click', e => {
     fontButtons.forEach(btn => {
       btn.classList.remove('checked')
     })
@@ -209,12 +208,11 @@ for (x of fontButtons) {
 }
 
 const borderButton = document.querySelector('.border')
-  borderButton.addEventListener('click',(e) => {
-    e.target.classList.toggle('checked')
-    if (e.target.classList.contains('checked')) {
-      word.border = true
-    }
-    else {
-      word.border = false
-    }
+borderButton.addEventListener('click', e => {
+  e.target.classList.toggle('checked')
+  if (e.target.classList.contains('checked')) {
+    word.border = true
+  } else {
+    word.border = false
+  }
 })
