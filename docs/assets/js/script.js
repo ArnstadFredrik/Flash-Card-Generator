@@ -105,19 +105,20 @@ word.createLanguageList = function() {
   console.log(this.norwegian)
 }
 word.createArray = function() {
-  let length = Math.ceil(this.hebrew.length / 12)
+  let count = 10
+  let length = Math.ceil(this.hebrew.length / count)
   let heb = this.hebrew
   let nor = this.norwegian
 
   for (let i = 1; i <= length; i++) {
     let arrayH
     let arrayN
-    if (this.hebrew.length < 12) {
+    if (this.hebrew.length < count) {
       arrayH = heb.splice(0, this.hebrew.length)
       arrayN = nor.splice(0, this.norwegian.length)
     } else {
-      arrayH = heb.splice(0, 12)
-      arrayN = nor.splice(0, 12)
+      arrayH = heb.splice(0, count)
+      arrayN = nor.splice(0, count)
     }
     this.hebrew = arrayH
     this.norwegian = arrayN
